@@ -8277,8 +8277,8 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.&lt;p&gt;
 <part name="D6" library="diode" deviceset="DIODE-" device="D-7.5" value="4007"/>
 <part name="D7" library="diode" deviceset="DIODE-" device="D-7.5" value="4007"/>
 <part name="D8" library="diode" deviceset="DIODE-" device="D-7.5" value="4007"/>
-<part name="S1" library="switch-omron" deviceset="10-XX" device=""/>
-<part name="S2" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="MIN" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="MAX" library="switch-omron" deviceset="10-XX" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY16" library="supply2" deviceset="GND" device=""/>
@@ -8351,8 +8351,8 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.&lt;p&gt;
 <instance part="D6" gate="G$1" x="-16.51" y="101.6" rot="R180"/>
 <instance part="D7" gate="G$1" x="-16.51" y="107.95"/>
 <instance part="D8" gate="G$1" x="-26.67" y="107.95"/>
-<instance part="S1" gate="1" x="5.08" y="46.99" rot="R270"/>
-<instance part="S2" gate="1" x="30.48" y="46.99" rot="R270"/>
+<instance part="MIN" gate="1" x="5.08" y="46.99" rot="R270"/>
+<instance part="MAX" gate="1" x="30.48" y="46.99" rot="R270"/>
 <instance part="SUPPLY2" gate="GND" x="-19.05" y="73.66"/>
 <instance part="SUPPLY4" gate="GND" x="10.16" y="29.21" rot="MR0"/>
 <instance part="SUPPLY16" gate="GND" x="35.56" y="29.21" rot="MR0"/>
@@ -8791,16 +8791,16 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.&lt;p&gt;
 <pinref part="T2" gate="G$1" pin="C"/>
 </segment>
 <segment>
-<pinref part="S1" gate="1" pin="P1"/>
-<pinref part="S1" gate="1" pin="P"/>
+<pinref part="MIN" gate="1" pin="P1"/>
+<pinref part="MIN" gate="1" pin="P"/>
 <wire x1="0" y1="46.99" x2="0" y2="44.45" width="0.1524" layer="91"/>
 <pinref part="SUPPLY11" gate="+5V" pin="+5V"/>
 <wire x1="0" y1="48.26" x2="0" y2="46.99" width="0.1524" layer="91"/>
 <junction x="0" y="46.99"/>
 </segment>
 <segment>
-<pinref part="S2" gate="1" pin="P1"/>
-<pinref part="S2" gate="1" pin="P"/>
+<pinref part="MAX" gate="1" pin="P1"/>
+<pinref part="MAX" gate="1" pin="P"/>
 <wire x1="25.4" y1="46.99" x2="25.4" y2="44.45" width="0.1524" layer="91"/>
 <pinref part="SUPPLY3" gate="+5V" pin="+5V"/>
 <wire x1="25.4" y1="48.26" x2="25.4" y2="46.99" width="0.1524" layer="91"/>
@@ -8826,9 +8826,9 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.&lt;p&gt;
 <label x="-30.48" y="73.66" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="S1" gate="1" pin="S"/>
+<pinref part="MIN" gate="1" pin="S"/>
 <wire x1="11.43" y1="46.99" x2="10.16" y2="46.99" width="0.1524" layer="91"/>
-<pinref part="S1" gate="1" pin="S1"/>
+<pinref part="MIN" gate="1" pin="S1"/>
 <wire x1="10.16" y1="44.45" x2="10.16" y2="46.99" width="0.1524" layer="91"/>
 <junction x="10.16" y="46.99"/>
 <label x="11.43" y="46.99" size="1.778" layer="95" xref="yes"/>
@@ -8896,8 +8896,8 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.&lt;p&gt;
 <label x="-35.56" y="76.2" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="S2" gate="1" pin="S1"/>
-<pinref part="S2" gate="1" pin="S"/>
+<pinref part="MAX" gate="1" pin="S1"/>
+<pinref part="MAX" gate="1" pin="S"/>
 <wire x1="35.56" y1="44.45" x2="35.56" y2="46.99" width="0.1524" layer="91"/>
 <wire x1="36.83" y1="46.99" x2="35.56" y2="46.99" width="0.1524" layer="91"/>
 <junction x="35.56" y="46.99"/>
