@@ -164,7 +164,7 @@ void loop() {
     sensor = accum/numReads;
     range = maxim - minim;
     steps = range/5;
-    tolerance = steps/3;
+    tolerance = steps/2.5;
     limPmin = minim + (steps*0) - tolerance;
     limPmax = minim + (steps*0) + tolerance;
     limRmin = minim + (steps*1) - tolerance;
