@@ -7,8 +7,8 @@
  * Atte: Eng. Eduardo Blanco M.
  * 06-06-2024
  */
-#define senPin  A7
-#define temPin  A4
+#define senPin1  A7
+#define senPin2  A4
 #define maxPin  A1
 #define minPin  A0
 #define t1  11
@@ -21,13 +21,13 @@
 #define maxAddress 3
 bool maxBut = false, maxButOld = false, minBut = false, minButOld = false;
 int maxim, minim, range, steps, tolerance;
-double accum, tempAccum;
-int readings[numReads];
+double accum1, accum2;
+int readings1[numReads];
+int readings1[numReads];
 int readFlag = 0;
 int serialPrintFlag = 0;
 int limPmin, limPmax, limRmin, limRmax, limNmin, limNmax, limDmin, limDmax, lim3min, lim3max, limLmin, limLmax;
-int sensor;
-int temp;
+int sensor = 0;
 int select = 0;
 
 void relayCtrl(){
@@ -112,20 +112,16 @@ int EEPROMReadInt(int address) {
    return word(hiByte, loByte); 
 }
 void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
   pinMode(t1, OUTPUT);
   pinMode(t3, OUTPUT);
   pinMode(t42,OUTPUT);
   pinMode(t41,OUTPUT);
   relayCtrl();
   Serial.begin(115200);
-  delay(100);
-  pinMode(LED_BUILTIN, OUTPUT);
+  
   maxim = EEPROMReadInt(maxAddress);
   minim = EEPROMReadInt(minAddress);
-  for(int i=0;i<numReads;i++){
-    readings[i] = analogRead(senPin);
-  }
-  Serial.print("P,_,R,_,N,_,D,_,3,_,L,_,C/filtro,S/filtro,Temp");
 }
 void loop() {
   if(serialPrintFlag < serialPrintLimit){
@@ -151,20 +147,23 @@ void loop() {
     }
     minButOld = minBut;
     
-    readings[readFlag] = analogRead(senPin);
+    readings1[readFlag] = analogRead(senPin1);
+    readings2[readFlag] = analogRead(senPin2);
     if(readFlag < numReads){
       readFlag++;
     } else{
       readFlag = 0;
     }
-    accum = 0;
+    accum1 = 0;
+    accum2 = 0;
     for(int i=0;i<numReads;i++){
-      accum = accum + readings[i];
+      accum1 = accum1 + readings1[i];
+      accum2 = accum2 + readings2[i];
     }
-    sensor = accum/numReads;
+    sensor = (accum1+accum2)/(numReads*2);
     range = maxim - minim;
     steps = range/5;
-    tolerance = steps/2.5;
+    tolerance = steps/2.2;
     limPmin = minim + (steps*0) - tolerance;
     limPmax = minim + (steps*0) + tolerance;
     limRmin = minim + (steps*1) - tolerance;
@@ -189,7 +188,6 @@ void loop() {
     if(sensor>lim3max){select++;}
     if(sensor>limLmin){select++;}
     relayCtrl();
-
     
     serialPrintFlag++;
   } else{ //FOR PLOTTER SERIAL
@@ -219,12 +217,9 @@ void loop() {
     Serial.print(",");
     Serial.print(sensor);
     Serial.print(",");
-    Serial.print(analogRead(senPin));
+    Serial.print(analogRead(senPin1));
     Serial.print(",");
-    temp = temp + analogRead(temPin);
-    temp = temp / 2;
-    temp = temp * 0.48828125;
-    Serial.println(temp + limPmin);
+    Serial.println(analogRead(senPin2));
     serialPrintFlag = 0;
   }
   if(maxim < minim){
