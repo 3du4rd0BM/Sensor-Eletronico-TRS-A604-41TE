@@ -2306,11 +2306,11 @@ design rules under a new name.</description>
 <signal name="TEMP">
 <contactref element="FDB9" pad="3"/>
 <contactref element="MDB9" pad="3"/>
-<wire x1="20.955" y1="48.895" x2="50.165" y2="48.895" width="0.8128" layer="16"/>
-<wire x1="50.165" y1="48.895" x2="51.1175" y2="49.8475" width="0.8128" layer="16"/>
-<wire x1="51.1175" y1="49.8475" x2="51.1175" y2="51.7525" width="0.8128" layer="16"/>
-<wire x1="20.0025" y1="51.7525" x2="20.0025" y2="49.8475" width="0.8128" layer="16"/>
-<wire x1="20.0025" y1="49.8475" x2="20.955" y2="48.895" width="0.8128" layer="16"/>
+<wire x1="21.59" y1="48.895" x2="49.53" y2="48.895" width="0.8128" layer="16"/>
+<wire x1="49.53" y1="48.895" x2="51.1175" y2="50.4825" width="0.8128" layer="16"/>
+<wire x1="51.1175" y1="50.4825" x2="51.1175" y2="51.7525" width="0.8128" layer="16"/>
+<wire x1="20.0025" y1="51.7525" x2="20.0025" y2="50.4825" width="0.8128" layer="16"/>
+<wire x1="20.0025" y1="50.4825" x2="21.59" y2="48.895" width="0.8128" layer="16"/>
 </signal>
 <signal name="T41">
 <contactref element="FDB9" pad="4"/>
@@ -2653,11 +2653,11 @@ design rules under a new name.</description>
 <signal name="N$9">
 <contactref element="FDB9" pad="2"/>
 <contactref element="MDB9" pad="2"/>
-<wire x1="17.2593" y1="51.7525" x2="17.2593" y2="50.6857" width="0.8128" layer="16"/>
-<wire x1="17.2593" y1="50.6857" x2="20.32" y2="47.625" width="0.8128" layer="16"/>
-<wire x1="20.32" y1="47.625" x2="50.8" y2="47.625" width="0.8128" layer="16"/>
-<wire x1="53.8607" y1="51.7525" x2="53.8607" y2="50.6857" width="0.8128" layer="16"/>
-<wire x1="53.8607" y1="50.6857" x2="50.8" y2="47.625" width="0.8128" layer="16"/>
+<wire x1="17.2593" y1="51.7525" x2="17.2593" y2="51.0032" width="0.8128" layer="16"/>
+<wire x1="17.2593" y1="51.0032" x2="20.6375" y2="47.625" width="0.8128" layer="16"/>
+<wire x1="20.6375" y1="47.625" x2="50.4825" y2="47.625" width="0.8128" layer="16"/>
+<wire x1="53.8607" y1="51.7525" x2="53.8607" y2="51.0032" width="0.8128" layer="16"/>
+<wire x1="53.8607" y1="51.0032" x2="50.4825" y2="47.625" width="0.8128" layer="16"/>
 </signal>
 <signal name="N$10">
 <contactref element="D5" pad="A"/>
