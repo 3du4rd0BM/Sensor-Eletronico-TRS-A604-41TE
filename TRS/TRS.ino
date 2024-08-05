@@ -7,6 +7,8 @@
  * Atte: Eng. Eduardo Blanco M.
  * 06-06-2024
  */
+ /*
+// Prototipo A
 #define senPin1  A7
 #define senPin2  A4
 #define maxPin  A1
@@ -15,7 +17,17 @@
 #define t3   9
 #define t42  5
 #define t41  2
-#define numReads 10
+*/
+// Prototipo B
+#define senPin1  A0
+#define senPin2  A3
+#define maxPin  A7
+#define minPin  A6
+#define t1  11
+#define t3   9
+#define t42  5
+#define t41  2
+#define numReads 20
 #define serialPrintLimit 100
 #define minAddress 0
 #define maxAddress 3
@@ -23,7 +35,7 @@ bool maxBut = false, maxButOld = false, minBut = false, minButOld = false;
 int maxim, minim, range, steps, tolerance;
 double accum1, accum2;
 int readings1[numReads];
-int readings1[numReads];
+int readings2[numReads];
 int readFlag = 0;
 int serialPrintFlag = 0;
 int limPmin, limPmax, limRmin, limRmax, limNmin, limNmax, limDmin, limDmax, lim3min, lim3max, limLmin, limLmax;
@@ -221,15 +233,10 @@ void loop() {
     Serial.print(",");
     Serial.println(analogRead(senPin2));
     serialPrintFlag = 0;
+    if(sensor < 76 || sensor > 947){
+      digitalWrite(LED_BUILTIN, HIGH);
+    }else{
+      digitalWrite(LED_BUILTIN, LOW);
+    }
   }
-  if(maxim < minim){
-    digitalWrite(LED_BUILTIN, HIGH);
-  }else{
-    digitalWrite(LED_BUILTIN, LOW);
-  }
-  /*if(sensor < minim || sensor > maxim){
-    digitalWrite(LED_BUILTIN, HIGH);
-  }else{
-    digitalWrite(LED_BUILTIN, LOW);
-  }*/
 }
