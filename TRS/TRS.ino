@@ -9,7 +9,7 @@
  */
  /*
 // Prototipo A
-#define senPin1  A7
+#define senPin1  A3
 #define senPin2  A4
 #define maxPin  A1
 #define minPin  A0
@@ -19,10 +19,10 @@
 #define t41  2
 */
 // Prototipo B
-#define senPin1  A0
+#define senPin1  A4
 #define senPin2  A3
-#define maxPin  A7
-#define minPin  A6
+#define maxPin  A1
+#define minPin  A0
 #define t1  11
 #define t3   9
 #define t42  5
